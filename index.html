@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- CSS Imports -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" integrity="sha256-YR4HrDE479EpYZgeTkQfgVJq08+277UXxMLbi/YP69o=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <style>
+        body { margin:0; padding:0; }
+    </style>
+
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- =====================
+      Add elements in this space-->
+      <div class='map-overlay' id='features'><h2>New York City Noise-Residential Explorer</h2><div id='pd'>
+      <hr>
+      <p>This map shows the most typical noise complaints of New York City from Nov.11 to Nov.15 (from Monday to Friday). Click the points to see more information.</p></div></div>
+      <hr>
+      <h3><span style="font-size: 20px; color: white;"><i class="fas fa-eye"></i></span>  All Records</h3>
+      <button id='Show_All' class="button2">Show</button>
+      <button id='Hide_All' class="button2">Clear</button>
+      <br>
+
+      <h3><span style="font-size: 20px; color: white;"><i class="fas fa-building"></i></span>  Filter by location</h3>
+      <button id='Manhattan' class="button2">MANHATTAN</button>
+      <button id='Brooklyn' class="button2">BROOKLYN</button>
+      <button id='Staten_Island' class="button2">STATEN ISLAND</button>
+      <button id='Bronx' class="button2">BRONX</button>
+      <button id='Queens' class="button2">QUEENS</button>
+      <br>
+      <h3><span style="font-size: 20px; color: white;"><i class="fas fa-address-book" aria-hidden="true"></i></span>  Filter by responding agency</h3>
+      <div>
+        <select id='mySelect2'>
+          <option id='select' class="boldoption">responding city agency</option>
+          <option id='NYPD' class="boldoption">New York City Police Department</option>
+          <option id='DEP' class="boldoption">Department of Environmental Protection</option>
+          <option id='EDC' class="boldoption">Economic Development Corporation</option>
+        </select>
+      </div>
+      <br>
+      <h3><span style="font-size: 20px; color: white;"><i class="fas fa-database"></i></span>  Filter by complaint types</h3>
+      <div>
+        <select id='mySelect3'>
+          <option id='select' class="boldoption">complaint types</option>
+          <option id='Noise' class="boldoption">Noise</option>
+          <option id='Noise-Residential' class="boldoption">Noise - Residential</option>
+          <option id='Noise-Commercial' class="boldoption">Noise - Commercial</option>
+          <option id='Noise-Street/Sidewalk' class="boldoption">Noise - Street/Sidewalk</option>
+          <option id='Noise-Vehicle' class="boldoption">Noise - Vehicle</option>
+          <option id='Noise-Park' class="boldoption">Noise - Park</option>
+          <option id='Noise-House of Worship' class="boldoption">Noise - House of Worship</option>
+          <option id='Noise-Helicopter' class="boldoption">Noise - Helicopter</option>
+        </select>
+      </div>
+      <br>
+      <hr>
+      <h4><span style="font-size: 5px; color: red;"><i class="fas fa-circle"></i></span> Banging/Pounding</h4>
+      <h4><span style="font-size: 5px; color: orange;"><i class="fas fa-circle"></i></span> Loud Music/Party</h4>
+      <h4><span style="font-size: 5px; color: blue;"><i class="fas fa-circle"></i></span> Loud Talking</h4>
+      <h4><span style="font-size: 5px; color: purple;"><i class="fas fa-circle"></i></span> Others</h4>
+      <!--====================== -->
+    </div>
+    <!-- Map -->
+    <!-- <div id='before' class='map'></div>
+    <div id='after' class='map'></div>-->
+    <div id="map" class="map"></div>
+    <canvas id="myChart">MyChart</canvas>
+      </div>
+    </div>
+    <!-- Javascript Imports -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js" integrity="sha256-6BZRSENq3kxI4YYBDqJ23xg0r1GwTHEpvp3okdaIqBw=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore.js" integrity="sha256-O4179En8zabOlPYBNvGp8cF0uh0vnSZpW4Q6Ul1h+8c=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/setup.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
